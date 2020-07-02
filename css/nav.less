@@ -1,0 +1,161 @@
+
+@charset "utf-8";
+// .header {
+//   width: 100%;
+//   height: 78px;
+//   background-color: black;
+//   text-align: center;
+//   line-height: 100px;
+//   img{
+//     width: 153px;
+//     height: 37px;
+//   }
+// }
+
+// header
+.header{
+  height: 78px;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  img{
+    width:153px;
+    height: 37px;
+    position: absolute;
+    top: 20px;
+    left: 581px;
+  }
+}
+
+// nav
+.nav {
+  width: 100%;
+  height: 50px;
+  background: black;
+  
+  li {
+    float: left;
+    position: relative;
+    .iconfont{
+      font-size: 24px;
+    }
+    .icon-sousuo{
+      margin-left: 150px;
+    }
+    .nav2 {
+      padding-top: 50px;
+      width: 1000px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      display: none;
+      background-color: white;
+    }
+    a {
+      display: block;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      background: black;
+      font-size: 14px;
+      padding: 0 17px;
+      .hot {
+        background: #d51b51;
+        border-top-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-size: 12px;
+        transform: scale(.83333333,.83333333);
+        line-height: 13px;
+        height: 15px;
+        display: inline-block;
+        padding: 1.5px 4px 0;
+        margin: -12px -3px 0 1px;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      &:hover {
+        font-weight: bolder;
+        &:hover .tag {
+          display: block;
+          z-index: 1;
+        }
+      }
+    }
+    &:hover {
+      .nav2 {
+        display: block;
+        text-decoration: underline;
+      }
+    }
+  }
+  .nav2 {
+    .menu {
+      float: left;
+    }
+    li {
+      a {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+  .nav-wrap {
+    li {
+      a {
+        .tag {
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
+          border-top-color: black;
+          position: absolute;
+          top: 50px;
+          left: 20px;
+          display: none;
+        }
+      }
+    }
+    .nav-img {
+      h2 {
+        font-size: 16px;
+        text-align: center;
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .nav-img {
+    text-align: center;
+    height: 400px;
+    width: 400px;
+    float: right;
+    border-left: 1px solid gray;
+    img {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
+.nav-wrap {
+  padding: 0 78px 0 58px;
+  .menu {
+    .headline {
+      font-weight: bolder;
+      margin-bottom: 5px;
+    }
+  }
+}
+/* 给二级导航添加定位 */
+.menu1 {
+  .menu2 {
+    .menu3 {
+      width: 300px;
+      overflow: hidden;
+    }
+  }
+}
+/* 添加鼠标滑过更改样式 */
+/* 鼠标滑过 弹出2级菜单 */

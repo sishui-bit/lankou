@@ -1,0 +1,400 @@
+@charset "utf-8";
+.float_l {
+  float: left;
+}
+.float_r {
+  float: right;
+}
+.clear_margin {
+  margin: 0!important;
+}
+.clear_border {
+  border: 0!important;
+}
+.clear_bg {
+  background: none!important;
+}
+.hot-wrap,
+.new,
+.jglist,
+.suprise,
+.banner,
+.footer,
+.more {
+  width: 1316px;
+  margin: 0 auto;
+}
+.hot-wrap {
+  height: 656px;
+  margin-top: 30px;
+}
+.hot-wrap h1 {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-size: 38px;
+}
+.hot-wrap ul {
+  width: 404px;
+  float: left;
+  margin: 0 16px;
+}
+.hot-wrap ul .hot-img {
+  width: 404px;
+  height: 404px;
+}
+.hot-wrap ul .hot-img img {
+  width: 100%;
+  height: 100%;
+}
+.hot-wrap ul .hot-c1 {
+  height: 56px;
+}
+.hot-wrap ul .hot-c1 a {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+  font-size: 26px;
+  padding: 18px 0 10px;
+}
+.hot-wrap ul .hot-c2 {
+  height: 33px;
+}
+.hot-wrap ul .hot-c2 a {
+  height: 18px;
+  line-height: 18px;
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  display: block;
+}
+.hot-wrap ul .hot-c3 a {
+  display: block;
+  height: 22px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+}
+.hot-wrap ul .hot-c4 {
+  display: block;
+  text-align: center;
+  height: 38px;
+  padding-top: 20px;
+}
+.hot-wrap ul .hot-c4 a {
+  width: 110px;
+  height: 38px;
+  background-color: #000;
+  line-height: 38px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+}
+.new {
+  height: 560px;
+}
+.new h1 {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+.new .new-banner {
+  width: 1282px;
+  height: 460px;
+  position: relative;
+}
+.new .new-banner img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 17px;
+}
+.jglist {
+  min-height: 700px;
+}
+.jglist h1 {
+  height: 74pxpx;
+  line-height: 34px;
+  text-align: left center;
+  color: #000;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.jglist h2 {
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #666;
+  text-align: left center;
+  margin-bottom: 30px;
+}
+.jglist ul {
+  width: 404px;
+  float: left;
+  margin: 0 16px;
+}
+.jglist ul .hot-img {
+  width: 404px;
+  height: 404px;
+}
+.jglist ul .hot-img img {
+  width: 100%;
+  height: 100%;
+}
+.jglist ul .hot-c1 {
+  height: 56px;
+}
+.jglist ul .hot-c1 a {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+  font-size: 26px;
+  padding: 18px 0 10px;
+}
+.jglist ul .hot-c2 {
+  height: 33px;
+}
+.jglist ul .hot-c2 a {
+  height: 18px;
+  line-height: 18px;
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  display: block;
+}
+.jglist ul .hot-c3 a {
+  display: block;
+  height: 22px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+}
+.jglist ul .hot-c4 {
+  display: block;
+  text-align: center;
+  height: 38px;
+  padding-top: 20px;
+}
+.jglist ul .hot-c4 a {
+  width: 110px;
+  height: 38px;
+  background-color: #000;
+  line-height: 38px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+}
+.suprise {
+  height: 560px;
+}
+.suprise h1 {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+.suprise .suprise-banner {
+  width: 1286px;
+  height: 460px;
+  position: relative;
+}
+.suprise .suprise-banner img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 17px;
+}
+.service {
+  height: 566px;
+  margin-top: 50px;
+}
+.service h1 {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+.service ul {
+  width: 404px;
+  float: left;
+  margin: 0 16px;
+}
+.service ul .hot-img {
+  width: 404px;
+  height: 404px;
+}
+.service ul .hot-img img {
+  width: 100%;
+  height: 100%;
+}
+.service ul .hot-c1 {
+  height: 56px;
+}
+.service ul .hot-c1 a {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: #000;
+  font-size: 26px;
+  padding: 18px 0 10px;
+}
+.service ul .hot-c2 {
+  height: 33px;
+}
+.service ul .hot-c2 a {
+  height: 18px;
+  line-height: 18px;
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  display: block;
+}
+.service ul .hot-c4 {
+  display: block;
+  text-align: center;
+  height: 38px;
+  padding-top: 20px;
+}
+.service ul .hot-c4 a {
+  width: 110px;
+  height: 38px;
+  background-color: #000;
+  line-height: 38px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+}
+.banner {
+  margin-top: 160px;
+}
+.banner .banner-wrap {
+  width: 1316px;
+  height: 377px;
+}
+.banner .banner-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.footer {
+  background-color: #000;
+  height: 636px;
+}
+.footer .footer-t {
+  height: 342px;
+  border-bottom: 1px solid #333;
+}
+.footer .footer-t h2 {
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  padding-top: 44px;
+  margin-bottom: 53px;
+}
+.footer .footer-t ul {
+  float: left;
+  margin-top: 50px;
+  margin: 0 100px;
+}
+.footer .footer-t ul .ft2 {
+  color: #fff;
+  height: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  text-align: center;
+  margin: 13px 0 10px;
+}
+.footer .footer-t ul .ft3 {
+  color: #666;
+  height: 18px;
+  line-height: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+.footer .footer-b {
+  height: 129px;
+  padding-top: 53px;
+  padding-left: 150px;
+}
+.footer .footer-b ul {
+  width: 230px;
+  height: 129px;
+  float: left;
+}
+.footer .footer-b ul .active {
+  color: #fff;
+}
+.footer .footer-b ul a {
+  line-height: 26px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.footer .footer-b ul a i {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+.footer .email {
+  padding-left: 150px;
+}
+.footer .email div {
+  margin-bottom: 10px;
+}
+.footer .email div i {
+  color: #fff;
+  font-size: 22px;
+  font-size: 600;
+}
+.footer .email div span {
+  height: 16px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #fff;
+  text-align: left center;
+}
+.more {
+  height: 162px;
+  padding-top: 20px;
+}
+.more li {
+  margin-bottom: 20px;
+}
+.more li span {
+  display: block;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  color: #000;
+  text-align: center;
+}
+.more .more-2 {
+  width: 1016px;
+  padding-left: 300px;
+}
+.more .more-2 li {
+  float: left;
+  margin-right: 30px;
+}

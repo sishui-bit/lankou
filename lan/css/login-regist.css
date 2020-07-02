@@ -1,0 +1,78 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+.clear_border {
+  border: 0!important;
+}
+.login-regist {
+  width: 887px;
+  height: 444px;
+  margin: 20px auto;
+  position: relative;
+  border: 1px solid #333;
+}
+.login-regist p {
+  width: 887px;
+  height: 32px ;
+  background: #d51b51;
+  display: block;
+  height: 32px;
+  width: 100%;
+  line-height: 32px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+.login-regist .login-regist-content {
+  width: 757px;
+  height: 364px;
+  position: absolute;
+  top: 62px;
+  left: 80px;
+}
+.login-regist .login-regist-content ul {
+  height: 24px ;
+  position: absolute;
+  left: 25%;
+}
+.login-regist .login-regist-content ul li {
+  width: 176px;
+  height: 24px;
+  float: left;
+  text-align: center;
+  border-right: 1px solid red;
+}
+.login-regist .login-regist-content ul li a {
+  display: block;
+  text-align: center;
+  line-height: 24px;
+  font-size: 24px;
+  color: #000;
+}
+.login-regist .login-regist-content .login-content {
+  float: left;
+}
+.login-regist .login-regist-content .login-content .login-l {
+  width: 352px;
+  height: 240px;
+  background-color: red;
+}
+.login-regist .login-regist-content .login-content .login-r {
+  width: 400px;
+  height: 102px;
+  background-color: pink;
+}
+.login-regist .login-regist-content form {
+  position: absolute;
+  top: 50px;
+}
+.login-regist .login-regist-content form div {
+  float: left;
+}
+.login-regist .login-regist-content form div .form-input {
+  width: 378px;
+  height: 54px;
+  margin-bottom: 20px;
+}

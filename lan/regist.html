@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css//login-regist.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+</head>
+<body>
+    <div class="login-regist">
+        <p class="lr-header">兰蔻会员欢迎您，注册享积分，登陆享礼遇！</p>
+        <div class="login-regist-content">
+            <div class="regist">
+                <ul>
+                    <li><a href="">登录</a></li>
+                    <li class="clear_border"><a href="">注册</a></li>
+                </ul>
+                <form action="./lib/reg.php" method="POST">
+                    <div>
+                        <div class="form-input">
+                            <label class="phone">手机号<span>*</span></label>
+                            <input type="tel" maxlength="" placeholder="手机号" id="phone" name="phone" style="width: 261px;height: 38px;">
+                            <i class="icon icon-input-success"></i>
+                            <div class="msg-block">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="form-input">
+                            <label class="yanzheng">验证码<span>*</span></label>
+                            <input type="tel" maxlength="" placeholder="输入验证码" id="registe-yanzheng"  style="width: 113px;height: 38px;">
+                            <i class="icon icon-input-success"></i>
+                            <div class="msg-block">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-input">
+                            <label class="password">密码<span>*</span></label>
+                            <input type="password" maxlength="" placeholder="请填写密码" id="password" name="password" style="width: 261px;height: 38px;">
+                            <i class="icon icon-input-success"></i>
+                            <div class="msg-block">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="form-input">
+                            <label class="duanxin">短信验证码<span>*</span></label>
+                            <input type="tel" maxlength="" placeholder="短信验证码" id="regist-duanxin"  style="width: 174px;height: 38px;">
+                            <i class="icon icon-input-success"></i>
+                            <div class="msg-block">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <label class="cpassword">确认密码<span>*</span></label>
+                        <input type="password" maxlength="" placeholder="请再次输入您的密码" id="password" name="password" style="width: 261px;height: 38px;">
+                        <i class="icon icon-input-success"></i>
+                        <div class="msg-block">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <input type="checkbox" name="radiobutton" value="radiobutton">我同意依照本使用条款和隐私政策对我的个人信息进行收集和使用；我已阅读并确认被给予充分机会理解该使用条款和隐私政策的内容。
+                      
+                        
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn" value="立即注册">
+                    </div>
+                    <div class="form-group">
+                       <a href="">邮箱注册</a>
+                    </div>
+                
+                </form>
+               
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

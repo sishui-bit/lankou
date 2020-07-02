@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: relative;
+            width: 1316px;
+            height: 377px;
+            overflow: hidden;
+        }
+
+        #box>a {
+            display: block;
+            position: absolute;
+            left: 1316px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #box>a:nth-child(1) {
+            left: 0;
+            top: 0;
+        }
+
+        #box>a>img{
+            width: 100%;
+            height: 100%;
+        }
+
+        #box>ul {
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            width: 110px;
+            height: 20px;
+            z-index: 999;
+        }
+
+        #box>ul>li {
+            float: left;
+            margin-top: 5px;
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+            background-color:#999;
+            border-radius: 50%;
+        }
+
+        #box>ul>li:nth-of-type(1) {
+            background-color:#000;
+        }
+
+        #box>span {
+            position: absolute;
+            top: 130px;
+            display: block;
+            width: 44px;
+            height: 88px;
+            font-size: 50px;
+            color:#000;
+        }
+
+        #box>span:nth-of-type(1) {
+            left: 0px;
+        }
+
+        #box>span:nth-of-type(2) {
+            right: 0px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./font_1673941_pnjr9f6hor/iconfont.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/Base.js"></script>
+    <script src="./js/move2001.js"></script>
+    <script>
+        var ord = 0; 
+        var oImgs = document.getElementsByClassName('box1');
+        var oLis = document.getElementsByClassName('box3');
+        var myTimer;
+        var oSpan = document.getElementsByTagName("box4");
+        var isComplete = true;//
+    
+        function autoPlay() {
+            myTimer = setInterval(function () {            
+                // 跳转到下一张图片
+                goImg(ord+1);
+            }, 1000);
+        }
+    
+        
+        function goImg(transOrd){
+            if(isComplete==false){
+                return;
+            }
+             var outOrd = ord;
+             ord = transOrd;
+            if(ord<0){
+                 ord=4;
+            }
+             if(ord>4){
+                ord = 0;
+             }
+                isComplete = false; //滑动没有结束
+                console.log("isComplete",isComplete);
+                oImgs[ord].style.left = "1316px";
+                // 滑动
+                sliderH(oImgs[outOrd],oImgs[ord], "left", -1316, 1000,function(){
+                    isComplete = true;
+                    console.log("isComplete",isComplete);
+                });
+                oLis[outOrd].style.backgroundColor = "#999";
+                oLis[ord].style.backgroundColor = "#000";
+        }
+    
+        function backImg(){
+            goImg(ord-1);
+        }
+    
+        function forwardImg(){        
+            goImg(ord+1);
+        }
+    
+        function stopPlay(){
+             window.clearInterval(myTimer);
+        }
+    
+    
+        window.onload = function () {
+            autoPlay();
+            document.getElementById("box").onmouseover = function(){
+                 stopPlay();
+            }
+    
+            document.getElementById("box").onmouseout = function(){
+                 autoPlay();
+            }
+            // 给每个豆豆绑定事件
+            for(let i=0;i<oLis.length;i++){
+               oLis[i].onclick = function(){
+                    goImg(i);
+               }
+            }
+    
+            // 左箭头绑定事件
+            oSpan[0].onclick = backImg;
+            // 右箭头绑定事件
+            oSpan[1].onclick = forwardImg
+        }
+    
+        window.onblur = function(){
+            window.clearInterval(myTimer);
+            console.log("失去焦点，停止播放");
+        }
+        
+        // window.onfocus :当前浏览器窗口获得焦点
+        window.onfocus = function(){
+            autoPlay();
+            console.log("获得焦点，继续播放");
+        }
+    
+    
+    
+    </script>
+    <!-- <script>
+        window.onload=function(){
+            $(function(){
+               var oicon=document.getElementsByClassName('.icon-sousuo');
+               oicon.onclick=function(){
+                   window.location="./lan/regist.html";
+               }
+            });
+        }
+    </script> -->
+    
+
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <a href="./"><img src="./images/logo@2x.png" alt=""></a>
+    </header>
+    <!-- nav -->
+    <div class="nav">
+        <ul class="nav-wrap">
+            <li>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">护肤
+                    <span class="tag"></span>
+                </a>
+                <!-- 二级菜单 -->
+                <div class="nav2">
+                    <div class="menu">
+                        <ul class="menu1">
+                            <li class="headline">
+                                <a href="#">产品类型</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">卸妆&洁面</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">美容液&爽肤水</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">精华</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">眼部护理</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">面霜</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">防晒隔离</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu2">
+                            <li class="headline">
+                                <a href="#">产品系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">清滢清洁系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">小黑瓶系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">菁纯系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">净澈焕肤系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">轻透防晒系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">塑颜系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">水分缘系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">臻白系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">男士系列</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu3">
+                            <li class="headline">
+                                <a href="#">肌肤需求</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">卸妆清洁</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">舒缓保湿</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">精华修复</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">净澈焕肤</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">美白淡斑</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">紧致提拉</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">抗老愈颜</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-img"><img src="./images/11.jpg" alt="">
+                        <h2>全新兰蔻极光系列<br><span>抛光.淡斑.美白></span></h2>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">彩妆
+                    <span class="tag"></span>
+                </a>
+                <div class="nav2">
+                    <div class="menu">
+                        <ul class="menu1">
+                            <li class="headline">
+                                <a href="#">底妆</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">妆前乳</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">气垫霜</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">粉底</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">蜜粉&散粉</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">修容遮瑕</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">腮红</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu2">
+                            <li class="headline">
+                                <a href="#">唇妆</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">唇膏</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">唇釉</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu3">
+                            <li class="headline">
+                                <a href="#">眼妆</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">睫毛膏</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">眼线笔</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">眉部</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-img"><img src="./images/22.jpg" alt="">
+                        <h2>持妆粉底液<br><span>持妆透气不假面></span></h2>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">香水
+                    <span class="tag"></span>
+                </a>
+                <div class="nav2">
+                    <div class="menu">
+                        <ul class="menu1">
+                            <li class="headline">
+                                <a href="#">女士香水</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">美丽人生·系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">奇迹系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">珍爱系列</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#">殿堂系列</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-img"><img src="./images/3.jpg" alt="">
+                        <h2>美丽人生香水<br><span>美丽因你而生></span></h2>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#">2020全新极光系列
+                    <span class="hot">HOT</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">夏日底妆推荐
+                    <span class="hot">HOT</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">菁纯奢宠家族
+                    <span class="hot">HOT</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">限量联名潮盒
+                    <span class="hot">HOT</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">会员中心</a>
+            </li>
+            <li><a href=""><i class="iconfont icon-sousuo"></i></a></li>
+            <li><a href=""><i class="iconfont icon-gouwuche"></i></a></li>
+            <li><a href=""><i class="iconfont icon-yonghu"></i></a></li>
+        </ul>
+</div>
+
+ <!--lunbo  -->
+ <div id="box">
+    <a href="" class="box1"><img src="./images/1.jpg" alt=""></a>
+    <a href="" class="box1"><img src="./images/2.jpg" alt=""></a>
+    <a href="" class="box1"><img src="./images/3.jpg" alt=""></a>
+    <a href="" class="box1"><img src="./images/4.jpg" alt=""></a>
+    <a href="" class="box1"><img src="./images/5.jpg" alt=""></a>
+    <ul class="box2">
+      <li class="box3"></li>
+      <li class="box3"></li>
+      <li class="box3"></li>
+      <li class="box3"></li>
+      <li class="box3"></li>
+    </ul>
+    <span class="box4">
+        <
+    </span>
+    <span class="box4">
+        >
+    </span>
+</div>
+
+<!-- hot-wrap -->
+    <div class="hot-wrap">
+        <h1>热销星品</h1>
+        <ul>
+            <li class="hot-img"><img src="./images/hot1.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享菁纯奢宠两件礼</a></li>
+            <li class="hot-c2"><a href="">菁纯眼霜</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>1080
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/hot2.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享菁纯奢宠三件礼</a></li>
+            <li class="hot-c2"><a href="">菁纯眼霜</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>1380
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/hot3.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享菁纯奢宠两件礼</a></li>
+            <li class="hot-c2"><a href="">菁纯防晒乳</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>890
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- new -->
+    <div class="new">
+        <h1>2020年重磅新品</h1>
+        <div class="new-banner">
+            <a href=""><img src="./images/new-banner.jpg" alt=""></a>
+        </div>
+    </div>
+
+    <!-- jglist -->
+    <div class="jglist">
+        <h1>全新兰蔻极光系列</h1>
+        <h2>美白大咖 重磅亮相 解锁美白机密</h2>
+        <ul>
+            <li class="hot-img"><img src="./images/list1.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享口碑新品八件礼</a></li>
+            <li class="hot-c2"><a href="">极光嫩肤1+1</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>1550
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/list2.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享透气持妆三件礼</a></li>
+            <li class="hot-c2"><a href="">持妆粉底液</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>320
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/list3.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">享柔光轻妆三件礼</a></li>
+            <li class="hot-c2"><a href="">菁纯气垫</a></li>
+            <li class="hot-c3"><a href="">
+                <span>￥</span>630
+            </a></li>
+            <li class="hot-c4"><a href="">
+                购买
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- suprise -->
+    <div class="suprise">
+        <h1>官网专属 宠粉惊喜</h1>
+        <div class="suprise-banner">
+            <a href="">
+                <img src="./images/suprise-banner.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- service -->
+    <div class="service">
+        <h1>官网特别服务</h1>
+        <ul>
+            <li class="hot-img"><img src="./images/s1.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">新客首购福利</a></li>
+            <li class="hot-c2"><a href="">首笔订单任购正装 享星品体验礼</a></li>
+            <li class="hot-c4"><a href="">
+                立即购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/s2.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">法式礼盒包装</a></li>
+            <li class="hot-c2"><a href="">正品保障 官方直购原装</a></li>
+            <li class="hot-c4"><a href="">
+               立即购买
+            </a></li>
+        </ul>
+        <ul>
+            <li class="hot-img"><img src="./images/s3.jpg" alt=""></li>
+            <li class="hot-c1"><a href="">现货即发 顺丰速达</a></li>
+            <li class="hot-c2"><a href="">任购正装顺丰包邮 部分地区除外</a></li>
+            <li class="hot-c4"><a href="">
+                立即购买
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner-wrap">
+                <img src="./images/banner.jpg" alt="">
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-t">
+            <h2>兰蔻官方网站</h2>
+            <ul>
+                <li class="fc1"><img src="./images/footer-1.png" alt=""></li>
+                <li class="ft2">正品保障</li>
+                <li class="ft3">官方直供原装</li>
+             </ul>
+             <ul>
+                <li class="fc1"><img src="./images/footer-2.png" alt=""></li>
+                <li class="ft2">顺丰包邮</li>
+                <li class="ft3">港澳台地区除外<br>
+                                亦可提供普通快递服务
+                </li>
+             </ul>
+             <ul>
+                <li class="fc1"><img src="./images/footer-3.png" alt=""></li>
+                <li class="ft2">精美礼盒</li>
+                <li class="ft3">甄选精美礼盒包装<br>
+                                尊享官网购物体验
+                </li>
+             </ul>
+             <ul>
+                <li class="fc1"><img src="./images/footer-4.png" alt=""></li>
+                <li class="ft2">关注公众号</li>
+                <li class="ft3">了解品牌最新信息</li>
+             </ul>
+        </div>
+        <div class="footer-b">
+            <ul>
+                <li><a href="" class="active">关于我们</a></li>
+                <li><a href="">加入兰蔻</a></li>
+                <li><a href="">会员中心</a></li>
+            </ul>
+            <ul>
+                <li><a href="" class="active">联系我们</a></li>
+                <li><a href="">线上美容顾问</a></li>
+                <li><a href="">客服热线：400-820-8016</a></li>
+            </ul>
+            <ul>
+                <li><a href="" class="active">配送及退货</a></li>
+            </ul>
+            <ul>
+                <li><a href="" class="active">专柜查询</a></li>
+            </ul>
+            <ul>
+                <li><a href="" class="active">关注我们</a></li>
+                <li><a href="">
+                    <i class="iconfont icon-weixin"></i>
+                    官方微信
+                </a></li>
+                <li><a href="">
+                    <i class="iconfont icon-weibo1"></i>
+                    官方微博
+                </a></li>
+            </ul>
+        </div>
+        <div class="email">
+            <div>
+                <i class="iconfont icon-icon_huabanfuben"></i>
+                <span>电子邮件</span>
+            </div>
+            <input class="email-input" type="text" maxlength="" placeholder="* 输入您的邮箱" id="subscribe">
+            <button class="email-btn" id="subscription">确定</button>
+        </div>
+    </div>
+
+    <!-- more -->
+    <div class="more">
+        <ul class="more-1">
+            <li class="active1">
+                <span>国家药监局提示您：宣称用于祛斑美白、防晒、染发、烫发等的化妆品为特殊用途化妆品，产品标签上应标注“国妆特字”或者“国妆特进字”的标准文号。</span>
+            </li>
+        </ul>
+        <ul class="more-2">
+            <li>
+                <span>© L’Oreal China 欧莱雅（中国）有限公司版权所有</span>
+            </li>
+            <li>
+                <span>中国工商 沪ICP备08100043号-34</span>
+            </li>
+            <li>
+                <span>沪公网安备 31010602001526号</span>
+            </li>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>

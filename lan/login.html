@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .setting {
+            display: flex;
+            /*主轴居中对齐*/
+            justify-content: center;
+            /*侧轴居中对齐*/
+            align-items: center; 
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .setting::after {
+            content: "";
+            background: pink;
+            opacity: 0.1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .login {
+            width: 800px;
+            height: 500px;
+            background-color: white;
+        }
+
+        .login h2 {
+            width: 100%;
+            height: 30px;
+            background-color: #d51b51;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        .login .login-content .login-l {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            float: left;
+        }
+
+        .login .login-content .login-r {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            float: left;
+        }
+
+        .login-l .login-l-content {
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        .login-r .login-r-content {
+            padding: 20px;
+        }
+
+        .login-l .login-l-content #phone {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #999;
+            margin: 10px 10px;
+        }
+
+        .login-l .login-l-content #pass {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #999;
+            margin: 10px 10px;
+        }
+
+        .login-l .login-l-content .verification {
+            font-size: 40px;
+            border: 1px solid #999;
+            margin-right: 10px;
+        }
+
+        .login-l .login-l-content .presentation {
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .login-l .login-l-content #btnLogin {
+            width: 200px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            border: none;
+            margin: 10px 0;
+        }
+
+        .login .login-content .login-l h3 a {
+            padding: 0 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-right: 1px solid #999;
+            font-size: 24px;
+            color: #999;
+        }
+
+        .login .login-content .login-r h3 a {
+            padding: 0 40px;
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="setting">
+        <div class="login">
+            <h2>兰蔻欢迎你，注册享积分，登录享礼遇！</h2>
+            <div class="login-content">
+                <div class="login-l">
+                    <h3><a href="">登录</a></h3>
+                    <div class="login-l-content">
+                        <form action="./lib/login.php" method="POST">
+                        手机号*&nbsp;<input id="phone" type="text" name="phone"><br />
+                        验证码*&nbsp; <input id="pass" type="password"><span class="verification">2234</span>
+                        <div class="presentation">看不清？<br>换一张</div>
+                        短信验证码*：<input id="userpass" type="password" name="userpass"><br />
+                        <input id="btnLogin" type="submit" value="登录"><br />
+                        </form>
+                    </div>
+                </div>
+                <div class="login-r">
+                    <h3><a href="">注册</a></h3>
+                    <div class="login-r-content">
+                        <h4>兰蔻品牌会员尊享权益</h4>
+                        <h5>欢迎来到兰蔻官网，您将尊享专属权益</h5>
+                        <ul>
+                            <li>兰蔻品牌会员独家礼赠</li>
+                            <li>会员积分兑礼</li>
+                            <li>生日专宠礼</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
